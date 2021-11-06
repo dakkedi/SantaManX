@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Assertions;
+using PathologicalGames;
 
 public class PlayerHandler : MonoBehaviour
 {
@@ -45,7 +46,7 @@ public class PlayerHandler : MonoBehaviour
 
 		if (_playerAttackInput)
 		{
-			var bulletHandler = Instantiate(_bullet, _gunPoint.transform.position, Quaternion.identity).GetComponent<BulletHandler>();
+			var bulletHandler = PoolManager.Pools["Bullets"].Spawn(_bullet, _gunPoint.transform.position, Quaternion.identity).GetComponent<BulletHandler>();
 			bulletHandler.SetHorizontalDirection(_playerDirection);
 		}
 	}
@@ -101,6 +102,6 @@ public class PlayerHandler : MonoBehaviour
 	{
 		_isGrounded = _groundCheck.Any(groundCheck => Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground")));
 		_groundCheck.ForEach(groundCheck => Debug.DrawLine(transform.position, groundCheck.position));
-		Debug.Log(_isGrounded);
+		//Debug.Log(_isGrounded);
 	}
 }

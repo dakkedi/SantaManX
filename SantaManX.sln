@@ -5,6 +5,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParadoxNotion", "ParadoxNot
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{FFDAEC62-A8A0-178B-6BDE-6889C10E1863}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-firstpass", "Assembly-CSharp-firstpass.csproj", "{865238DB-94F7-CBA4-6258-2D3213A8D7DA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor", "Assembly-CSharp-Editor.csproj", "{E494D797-54F9-51BD-A43C-7F9BBE61CADE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +23,14 @@ Global
 		{FFDAEC62-A8A0-178B-6BDE-6889C10E1863}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FFDAEC62-A8A0-178B-6BDE-6889C10E1863}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FFDAEC62-A8A0-178B-6BDE-6889C10E1863}.Release|Any CPU.Build.0 = Release|Any CPU
+		{865238DB-94F7-CBA4-6258-2D3213A8D7DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{865238DB-94F7-CBA4-6258-2D3213A8D7DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{865238DB-94F7-CBA4-6258-2D3213A8D7DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{865238DB-94F7-CBA4-6258-2D3213A8D7DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E494D797-54F9-51BD-A43C-7F9BBE61CADE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E494D797-54F9-51BD-A43C-7F9BBE61CADE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E494D797-54F9-51BD-A43C-7F9BBE61CADE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E494D797-54F9-51BD-A43C-7F9BBE61CADE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

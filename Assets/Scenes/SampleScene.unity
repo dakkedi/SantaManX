@@ -252,6 +252,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GroundTile
       objectReference: {fileID: 0}
+    - target: {fileID: 3747995570819546919, guid: 40837f92b7b7b8049bdf641e2b8071df, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 40837f92b7b7b8049bdf641e2b8071df, type: 3}
 --- !u!1001 &256375787
@@ -510,7 +514,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.0525928, y: 1.6754067, z: -10}
+  m_LocalPosition: {x: 0.33940694, y: -0.2905933, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -638,7 +642,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 715656606}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.0525928, y: 1.6754067, z: -10}
+  m_LocalPosition: {x: 0.33940694, y: -0.2905933, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 348549513}
@@ -833,6 +837,71 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3747995570819546912, guid: 40837f92b7b7b8049bdf641e2b8071df, type: 3}
   m_PrefabInstance: {fileID: 70710016}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1947305847
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1947305849}
+  - component: {fileID: 1947305848}
+  m_Layer: 6
+  m_Name: BulletSpawnPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1947305848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1947305847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59dfbc0f4f3a98b4ebf4ad40fc3f43aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  poolName: Bullets
+  matchPoolScale: 0
+  matchPoolLayer: 1
+  dontReparent: 0
+  _dontDestroyOnLoad: 0
+  logMessages: 0
+  _perPrefabPoolOptions:
+  - prefab: {fileID: 4974261391202794574, guid: 98575918d1d7ea848bab14a201bc408e, type: 3}
+    preloadAmount: 3
+    preloadTime: 0
+    preloadFrames: 2
+    preloadDelay: 0
+    limitInstances: 1
+    limitAmount: 3
+    limitFIFO: 0
+    cullDespawned: 0
+    cullAbove: 3
+    cullDelay: 0
+    cullMaxPerPass: 5
+    _logMessages: 0
+    spawnPool: {fileID: 0}
+  maxParticleDespawnTime: 300
+--- !u!4 &1947305849
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1947305847}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2082451871
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -888,6 +957,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GroundTile (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 3747995570819546919, guid: 40837f92b7b7b8049bdf641e2b8071df, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 40837f92b7b7b8049bdf641e2b8071df, type: 3}
 --- !u!1001 &3878568493515535113
@@ -915,11 +988,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3878568492780242250, guid: a7429c4935002be40a13b1c904a9dc8a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.042
+      value: 0.35
       objectReference: {fileID: 0}
     - target: {fileID: 3878568492780242250, guid: a7429c4935002be40a13b1c904a9dc8a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.686
+      value: -0.28
       objectReference: {fileID: 0}
     - target: {fileID: 3878568492780242250, guid: a7429c4935002be40a13b1c904a9dc8a, type: 3}
       propertyPath: m_LocalPosition.z

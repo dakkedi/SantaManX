@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using PathologicalGames;
 using UnityEngine;
 
 public class BulletHandler : MonoBehaviour
@@ -15,19 +14,14 @@ public class BulletHandler : MonoBehaviour
 
 	private void OnBecameInvisible()
 	{
-		Destroy(gameObject, 0.5f);
+		PoolManager.Pools["Bullets"].Despawn(gameObject.transform);
 	}
 
 
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
 		if (collision.gameObject.name == "Player") return;
-		Destroy(gameObject);
-	}
-	private void OnCollisionEnter2D(Collision2D collision)
-	{
-		if (collision.gameObject.name == "Player") return;
-		Destroy(gameObject);
+		PoolManager.Pools["Bullets"].Despawn(gameObject.transform);
 	}
 
 	public void SetHorizontalDirection(int direction) => _direction = direction;

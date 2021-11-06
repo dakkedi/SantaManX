@@ -14,6 +14,7 @@ public class PlayerHandler : MonoBehaviour
 	[SerializeField, Range(1, 10)] private float _runSpeed = 4;
 	[SerializeField] private GameObject _gunPoint;
 	[SerializeField] private GameObject _bullet;
+	[SerializeField] private GameObject _bulletCharged;
 
 	private Vector2 _playerMovementInput;
 	private bool _playerJumpInput;
@@ -46,9 +47,18 @@ public class PlayerHandler : MonoBehaviour
 
 		if (_playerAttackInput)
 		{
+			// TODO Handle charge 
 			var bulletHandler = PoolManager.Pools["Bullets"].Spawn(_bullet, _gunPoint.transform.position, Quaternion.identity).GetComponent<BulletHandler>();
 			bulletHandler.SetHorizontalDirection(_playerDirection);
 		}
+	}
+
+	private void FixedUpdate()
+	{
+		IsfallingCheck();
+		IsGroundedCheck();
+		HandleHorizontalMovement();
+		HandleJump();
 	}
 
 	private void CheckPlayerDirection()
@@ -61,14 +71,6 @@ public class PlayerHandler : MonoBehaviour
 		{
 			transform.localScale = new Vector2(Vector2.right.x, transform.localScale.y);
 		}
-	}
-
-	private void FixedUpdate()
-	{
-		IsfallingCheck();
-		IsGroundedCheck();
-		HandleHorizontalMovement();
-		HandleJump();
 	}
 
 	private void HandleJump()
@@ -90,6 +92,12 @@ public class PlayerHandler : MonoBehaviour
 
 	private void HandleHorizontalMovement()
 	{
+		if (_playerMovementInput.x == 0)
+		{
+			_rigidbody2D.velocity = new Vector2(0, _rigidbody2D.velocity.y);
+			return;
+		}
+
 		_rigidbody2D.velocity = new Vector2(_playerMovementInput.x * _runSpeed, _rigidbody2D.velocity.y);
 	}
 

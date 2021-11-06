@@ -887,6 +887,20 @@ MonoBehaviour:
     cullMaxPerPass: 5
     _logMessages: 0
     spawnPool: {fileID: 0}
+  - prefab: {fileID: 4974261391202794574, guid: b1bc5b810ad2ee14ea294c9e23829e04, type: 3}
+    preloadAmount: 3
+    preloadTime: 0
+    preloadFrames: 2
+    preloadDelay: 0
+    limitInstances: 1
+    limitAmount: 3
+    limitFIFO: 0
+    cullDespawned: 0
+    cullAbove: 50
+    cullDelay: 60
+    cullMaxPerPass: 5
+    _logMessages: 0
+    spawnPool: {fileID: 0}
   maxParticleDespawnTime: 300
 --- !u!4 &1947305849
 Transform:
@@ -978,6 +992,10 @@ PrefabInstance:
       propertyPath: _gunPoint
       value: 
       objectReference: {fileID: 1240581772}
+    - target: {fileID: 3878568492780242248, guid: a7429c4935002be40a13b1c904a9dc8a, type: 3}
+      propertyPath: _bulletCharged
+      value: 
+      objectReference: {fileID: 6175073311263204134, guid: b1bc5b810ad2ee14ea294c9e23829e04, type: 3}
     - target: {fileID: 3878568492780242249, guid: a7429c4935002be40a13b1c904a9dc8a, type: 3}
       propertyPath: m_Name
       value: Player

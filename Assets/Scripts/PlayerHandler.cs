@@ -15,6 +15,7 @@ public class PlayerHandler : MonoBehaviour
 	[SerializeField] private GameObject _gunPoint;
 	[SerializeField] private GameObject _bullet;
 	[SerializeField] private GameObject _bulletCharged;
+	[SerializeField] private Transform _levelStartPosition;
 
 	private Vector2 _playerMovementInput;
 	private bool _playerJumpInput;
@@ -36,6 +37,30 @@ public class PlayerHandler : MonoBehaviour
 		CheckPlayerDirection();
 	}
 
+	private void FixedUpdate()
+	{
+		IsfallingCheck();
+		IsGroundedCheck();
+		HandleHorizontalMovement();
+		HandleJump();
+	}
+
+	private void OnTriggerEnter2D(Collider2D collision)
+	{
+		if (collision.gameObject.tag == "DeathBox")
+		{
+			Debug.Log("test");
+			Destroy(gameObject);
+		}
+	}
+
+	private void TriggerPlayerDeath()
+	{
+		gameObject.SetActive(false);
+		transform.position = _levelStartPosition.position;
+		gameObject.SetActive(true);
+	}
+
 	private void HandleInput()
 	{
 		_playerMovementInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
@@ -51,14 +76,6 @@ public class PlayerHandler : MonoBehaviour
 			var bulletHandler = PoolManager.Pools["Bullets"].Spawn(_bullet, _gunPoint.transform.position, Quaternion.identity).GetComponent<BulletHandler>();
 			bulletHandler.SetHorizontalDirection(_playerDirection);
 		}
-	}
-
-	private void FixedUpdate()
-	{
-		IsfallingCheck();
-		IsGroundedCheck();
-		HandleHorizontalMovement();
-		HandleJump();
 	}
 
 	private void CheckPlayerDirection()

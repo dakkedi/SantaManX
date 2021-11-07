@@ -20,7 +20,8 @@ public class BulletHandler : MonoBehaviour
 
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
-		if (collision.gameObject.name == "Player") return;
+		if (collision.gameObject.tag == "Player") return;
+		if (collision.gameObject.tag == "CameraConfiner") return;
 		PoolManager.Pools["Bullets"].Despawn(gameObject.transform);
 	}
 

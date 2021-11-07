@@ -156,7 +156,7 @@ GameObject:
   - component: {fileID: 3878568492780242253}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -197,6 +197,10 @@ MonoBehaviour:
   - {fileID: 680729608}
   _maxJumpVelocity: 6
   _runSpeed: 4
+  _gunPoint: {fileID: 1272990445667646178}
+  _bullet: {fileID: 6175073311263204134, guid: 98575918d1d7ea848bab14a201bc408e, type: 3}
+  _bulletCharged: {fileID: 6175073311263204134, guid: b1bc5b810ad2ee14ea294c9e23829e04, type: 3}
+  _levelStartPosition: {fileID: 0}
 --- !u!61 &3878568492780242252
 BoxCollider2D:
   m_ObjectHideFlags: 0

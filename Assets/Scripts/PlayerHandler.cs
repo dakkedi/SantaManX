@@ -45,20 +45,10 @@ public class PlayerHandler : MonoBehaviour
 		HandleJump();
 	}
 
-	private void OnTriggerEnter2D(Collider2D collision)
+	private void OnBecameInvisible()
 	{
-		if (collision.gameObject.tag == "DeathBox")
-		{
-			Debug.Log("test");
-			Destroy(gameObject);
-		}
-	}
-
-	private void TriggerPlayerDeath()
-	{
-		gameObject.SetActive(false);
-		transform.position = _levelStartPosition.position;
-		gameObject.SetActive(true);
+		// Check this page for solving the player in frame-problem https://forum.unity.com/threads/cinemachine-events.575068/ 
+		Destroy(gameObject);
 	}
 
 	private void HandleInput()
